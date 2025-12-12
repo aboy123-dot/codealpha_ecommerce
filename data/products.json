@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "MacBook Pro M3", "category": "laptop", "price": 1499, "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?w=500&q=80" },
+  { "id": 2, "name": "iPhone 15 Pro Max", "category": "phone", "price": 1199, "image": "https://images.unsplash.com/photo-1696446701796-da61225697cc?w=500&q=80" },
+  { "id": 3, "name": "Sony WH-1000XM5", "category": "gadget", "price": 348, "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&q=80" },
+  { "id": 4, "name": "Samsung S24 Ultra", "category": "phone", "price": 1299, "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80" },
+  { "id": 5, "name": "Dell XPS 15", "category": "laptop", "price": 1350, "image": "https://images.unsplash.com/photo-1593642632823-8f78536788c6?w=500&q=80" },
+  { "id": 6, "name": "Apple Watch Ultra 2", "category": "gadget", "price": 799, "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80" },
+  { "id": 7, "name": "iPad Pro 12.9", "category": "gadget", "price": 1099, "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80" },
+  { "id": 8, "name": "Asus ROG Zephyrus", "category": "laptop", "price": 1899, "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80" },
+  { "id": 9, "name": "Google Pixel 8 Pro", "category": "phone", "price": 999, "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff23?w=500&q=80" },
+  { "id": 10, "name": "Canon EOS R5", "category": "gadget", "price": 3500, "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&q=80" },
+  { "id": 11, "name": "PlayStation 5", "category": "gadget", "price": 499, "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500&q=80" },
+  { "id": 12, "name": "Mechanical Keyboard", "category": "gadget", "price": 150, "image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80" }
+]

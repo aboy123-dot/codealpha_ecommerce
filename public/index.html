@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codascope | Premium Tech Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" onclick="navigateTo('home')">Codascope.</div>
+        <div class="nav-links">
+            <a onclick="navigateTo('home')">Home</a>
+            <a onclick="navigateTo('shop')">Shop</a>
+            <a onclick="navigateTo('dashboard')" id="nav-dashboard" style="display:none;">Dashboard</a>
+            <div id="auth-buttons">
+                <button class="btn-login" onclick="openModal('login')">Login</button>
+            </div>
+            <div id="user-profile" style="display:none;">
+                <span id="username-display"></span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+            <div class="cart-icon" onclick="toggleCartSidebar()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- VIEW: Home -->
+    <section id="home-view" class="view active">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Future Tech, Today.</h1>
+                <p>Explore the waitlist for the most exclusive gadgets.</p>
+                <button onclick="navigateTo('shop')" class="cta-btn">Start Shopping</button>
+            </div>
+        </header>
+        <div class="features container">
+            <div class="feature-box">🚚 Fast Delivery</div>
+            <div class="feature-box">🔒 Secure Payment</div>
+            <div class="feature-box">🛡️ 2 Year Warranty</div>
+        </div>
+    </section>
+
+    <!-- VIEW: Shop -->
+    <section id="shop-view" class="view container">
+        <div class="shop-header">
+            <h2>Our Catalog</h2>
+            <div class="filters">
+                <button onclick="filterProducts('all')">All</button>
+                <button onclick="filterProducts('laptop')">Laptops</button>
+                <button onclick="filterProducts('phone')">Phones</button>
+                <button onclick="filterProducts('gadget')">Gadgets</button>
+            </div>
+        </div>
+        <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <!-- VIEW: Checkout -->
+    <section id="checkout-view" class="view container narrow">
+        <h2>Secure Checkout</h2>
+        <div class="checkout-grid">
+            <div class="checkout-form">
+                <h3>Shipping Info</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="Address" required>
+                <input type="text" placeholder="City" required>
+                <h3>Payment Details</h3>
+                <input type="text" placeholder="Card Number (Fake)" required>
+                <div class="row">
+                    <input type="text" placeholder="MM/YY">
+                    <input type="text" placeholder="CVC">
+                </div>
+                <button onclick="processOrder()" class="btn-pay">Pay $<span id="checkout-total">0</span></button>
+                <button onclick="navigateTo('shop')" class="btn-back">Continue Shopping</button>
+            </div>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <ul id="checkout-items"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIEW: Success -->
+    <section id="success-view" class="view container narrow text-center">
+        <div class="success-card">
+            <div class="checkmark">✔</div>
+            <h2>Order Successful!</h2>
+            <p>Your order ID is: <b id="success-order-id"></b></p>
+            <p>You have been added to the priority waitlist.</p>
+            <button onclick="navigateTo('dashboard')" class="cta-btn">View Dashboard</button>
+        </div>
+    </section>
+
+    <!-- VIEW: Dashboard -->
+    <section id="dashboard-view" class="view container">
+        <h2>My Dashboard</h2>
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <h1 id="dash-total-orders">0</h1>
+            </div>
+            <div class="stat-card">
+                <h3>Status</h3>
+                <h1 style="color:green;">Active</h1>
+            </div>
+        </div>
+        <h3>Order History (Waitlist)</h3>
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="dash-history"></tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="col">
+                <h3>Codascope.</h3>
+                <p>Your number one source for all things tech.</p>
+            </div>
+            <div class="col">
+                <h4>Links</h4>
+                <a onclick="navigateTo('home')">Home</a>
+                <a onclick="navigateTo('shop')">Shop</a>
+            </div>
+            <div class="col">
+                <h4>Contact</h4>
+                <p>support@codascope.tech</p>
+                <p>+1 234 567 890</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Codascope Inc. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span onclick="toggleCartSidebar()" class="close-cart">&times;</span>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button onclick="goToCheckout()" class="btn-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Login</h2>
+            <input type="text" id="auth-user" placeholder="Username">
+            <input type="password" id="auth-pass" placeholder="Password">
+            <button onclick="handleAuth()">Submit</button>
+            <p id="auth-switch"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
