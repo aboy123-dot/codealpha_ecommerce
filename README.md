@@ -1,40 +1,56 @@
-Mini E‑Commerce Web Application
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini E-Commerce Web Application</title>
+</head>
+<body>
 
-This project is a Mini E‑Commerce Web Application developed as part of the CodeAlpha Project Requirement. The application demonstrates the use of Node.js with Express for the backend and HTML, CSS, and Tailwind CSS for the frontend. Product and user data are stored locally using JSON files, and browser LocalStorage is used for cart/session handling.
+  <h1>Mini E-Commerce Web Application</h1>
 
-📌 Project Overview
+  <p>
+    This project is a <strong>Mini E-Commerce Web Application</strong> developed as part of the
+    <strong>CodeAlpha Project Requirement</strong>. The application demonstrates the use of
+    <strong>Node.js with Express</strong> for the backend and
+    <strong>HTML, CSS, and Tailwind CSS</strong> for the frontend.
+    Product and user data are stored locally using <strong>JSON files</strong>, and
+    browser <strong>LocalStorage</strong> is used for cart and session handling.
+  </p>
 
-The Mini E‑Commerce application allows users to:
+  <h2>📌 Project Overview</h2>
 
-View available products
+  <p>The Mini E-Commerce application allows users to:</p>
 
-Add products to cart
+  <ul>
+    <li>View available products</li>
+    <li>Add products to cart</li>
+    <li>Manage cart items using LocalStorage</li>
+    <li>Register and login users (stored in JSON files)</li>
+    <li>Fetch products and user data from the backend API</li>
+  </ul>
 
-Manage cart items using LocalStorage
+  <p>
+    The project focuses on understanding <strong>full-stack fundamentals</strong>,
+    API consumption, and frontend-backend integration without using an external database.
+  </p>
 
-Register and login users (stored in JSON files)
+  <h2>🛠️ Technologies Used</h2>
 
-Fetch products and user data from the backend API
+  <h3>Frontend</h3>
+  <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>Tailwind CSS</li>
+    <li>JavaScript (Fetch API)</li>
+    <li>Browser LocalStorage</li>
+  </ul>
 
-The project focuses on understanding full‑stack fundamentals, API consumption, and frontend‑backend integration without using an external database.
+  <h3>Backend</h3>
+  <ul>
+    <li>Node.js</li>
+    <li>Express.js</li>
+    <li>JSON files for data storage</li>
+  </ul>
 
-🛠️ Technologies Used
-Frontend
-
-HTML5
-
-CSS3
-
-Tailwind CSS
-
-JavaScript (Fetch API)
-
-Browser LocalStorage
-
-Backend
-
-Node.js
-
-Express.js
-
-JSON files for data storage
+</body>
+</html>
