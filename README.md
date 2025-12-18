@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Mini E-Commerce Web Application</title>
-</head>
-<body>
+
 
   <h1>Mini E-Commerce Web Application</h1>
 
